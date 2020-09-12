@@ -6,7 +6,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.get("/", (req, res) => {
   // res.render("/home");
-  res.send({ hi: "there" });
+  res.send({ hi: "thessre" });
 });
 
 const PORT = process.env.PORT || 3000;

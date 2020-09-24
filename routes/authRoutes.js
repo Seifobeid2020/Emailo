@@ -1,7 +1,7 @@
 import passport from "passport";
 export default (app) => {
   app.get("/", (req, res) => {
-    res.send({ hi: "thessre" });
+    res.send({ hi: "thessresds " });
   });
 
   app.get(

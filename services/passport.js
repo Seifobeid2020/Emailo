@@ -1,6 +1,6 @@
 import passport from "passport";
 import GoogleStrategy from "passport-google-oauth20";
-import keys from "../config/keys.js";
+import { keys } from "../config/keys.js";
 // import { profile } from "console";
 import mongoose from "mongoose";
 

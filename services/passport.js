@@ -1,12 +1,13 @@
 import passport from "passport";
 import GoogleStrategy from "passport-google-oauth20";
-import { keys } from "../config/keys.js";
+import keys from "../config/keys.js";
 // import { profile } from "console";
 import mongoose from "mongoose";
 
 const User = mongoose.model("users");
 
 export default () => {
+  console.log("this is keys : " + keys.cookieKey);
   passport.serializeUser((user, done) => {
     done(null, user.id);
   });

@@ -37,27 +37,22 @@
 //   module.exports = require("./dev.js");
 // }
 import Prodkeys from "./prod.js";
-// import Devkeys from "./dev.js";
+import Devkeys from "./dev.js";
 const f = () => {
   let keys;
+  console.log("this is process.env.NODE_ENV : " + process.env.NODE_ENV);
   if (process.env.NODE_ENV !== "production") {
     //We are in production - return the prod set of keys
-    // keys = require("./prod");
-    // prod.toString = () => {
-    //   return JSON.stringify(this);
-    // };
-    // console.log("this is prod : " + keyss.cookieKey);
-    // console.log("this is prod" + prod.toString());
+
     keys = Prodkeys;
   } else {
-    //we are in development - return the dev keys!!!
-    // keys = require("./dev");
-    // keys = Devkeys;
+    keys = Devkeys;
   }
   return keys;
 };
-console.log("here where the all keys: " + f());
+
 const keys = f();
 export default keys;
 
-// console.log(module.exports);
+// import { Devkeys } from "./dev.js";
+// export default Devkeys;

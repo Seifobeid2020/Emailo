@@ -37,7 +37,7 @@
 //   module.exports = require("./dev.js");
 // }
 import Prodkeys from "./prod.js";
-import Devkeys from "./dev.js";
+// import Devkeys from "./dev.js";
 const f = () => {
   let keys;
   console.log("this is process.env.NODE_ENV : " + process.env.NODE_ENV);
@@ -46,7 +46,7 @@ const f = () => {
 
     keys = Prodkeys;
   } else {
-    keys = Devkeys;
+    keys = Prodkeys;
   }
   return keys;
 };

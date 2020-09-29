@@ -13,7 +13,7 @@
     "server": "nodemon index.js",
     "client-side": "npm start --prefix client-side",
     "dev": "concurrently \"npm run server\" \"npm run client-side\"",
-    "heroku-postbuild": "npm install --prefix client-side  "
+    "heroku-postbuild": "npm run build --prefix client-side "
   },
   "author": "",
   "license": "ISC",

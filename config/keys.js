@@ -37,16 +37,16 @@
 //   module.exports = require("./dev.js");
 // }
 import Prodkeys from "./prod.js";
-// import Devkeys from "./dev.js";
+import Devkeys from "./dev.js";
 const f = () => {
   let keys;
   console.log("this is process.env.NODE_ENV : " + process.env.NODE_ENV);
   if (process.env.NODE_ENV !== "production") {
     //We are in production - return the prod set of keys
 
-    keys = Prodkeys;
+    keys = Devkeys;
   } else {
-    keys = Prodkeys;
+    keys = Devkeys;
   }
   return keys;
 };

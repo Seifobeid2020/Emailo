@@ -12,6 +12,8 @@ import bodyParser from "body-parser";
 import path from "path";
 // const keys = require("./config/keys");
 // let template = ejs.compile(str, options);
+
+const __dirname = path.resolve();
 mongoose.connect(keys.mongoURI);
 const app = express();
 

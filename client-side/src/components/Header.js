@@ -17,13 +17,14 @@ class Header extends Component {
       default:
         return (
           <React.Fragment>
-            <Nav.Content>
-              {" "}
-              <Payments />
-            </Nav.Content>
-            <Nav.Content> Credits: {this.props.auth.credits}</Nav.Content>
+            <Payments />
 
-            <Nav.Link href="/api/logout">Log Out </Nav.Link>
+            <Nav.Item as="li">
+              <Nav.Link href="#">Credits: {this.props.auth.credits}</Nav.Link>
+            </Nav.Item>
+            <Nav.Item as="li">
+              <Nav.Link href="/api/logout">Log Out </Nav.Link>
+            </Nav.Item>
           </React.Fragment>
         );
     }
@@ -40,22 +41,11 @@ class Header extends Component {
             SEmail
           </Link>
         </Navbar.Brand>
-        {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            {this.renderContent()}
-            {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown> */}
-          </Nav>
+          <Nav className="mr-auto"></Nav>
+
+          <Nav>{this.renderContent()}</Nav>
           {/* <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button variant="outline-success">Search</Button>

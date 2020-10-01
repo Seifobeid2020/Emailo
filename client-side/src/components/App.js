@@ -11,9 +11,11 @@ import * as actions from "../actions";
 import Header from "./Header";
 import Landing from "./Landing";
 const Dashboard = async () => {
-  const prayRes = await axios.get(
-    `https://shobiddak.com/prayers/prayer_today.json`
-  );
+  let proxyUrl = "https://cors-anywhere.herokuapp.com/",
+    targetUrl = "https://shobiddak.com/prayers/prayer_today.json";
+  const prayRes = await axios.get(proxyUrl + targetUrl);
+  const data = await prayRes.json();
+  console.table(data);
 
   console.log(prayRes.data);
 };

@@ -5,11 +5,18 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import axios from "axios";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 import Header from "./Header";
 import Landing from "./Landing";
-const Dashboard = () => <h2>Dashboard</h2>;
+const Dashboard = async () => {
+  const prayRes = await axios.get(
+    `https://shobiddak.com/prayers/prayer_today.json`
+  );
+
+  console.log(prayRes.data);
+};
 const SurveyNew = () => <h2>SurveyNew</h2>;
 
 const notFound = () => <h2>Not Found</h2>;
@@ -27,8 +34,9 @@ class App extends Component {
       <React.Fragment>
         <Router>
           <React.StrictMode>
-            <Header />
             <div className="container">
+              <Header />
+
               <Switch>
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/surveys" component={Dashboard} />

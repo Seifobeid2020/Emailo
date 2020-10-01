@@ -10,14 +10,20 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 import Header from "./Header";
 import Landing from "./Landing";
-const Dashboard = async () => {
-  let proxyUrl = "https://cors-anywhere.herokuapp.com/",
+const Dashboard = () => {
+  var proxyUrl = "https://cors-anywhere.herokuapp.com/",
     targetUrl = "https://shobiddak.com/prayers/prayer_today.json";
-  const prayRes = await axios.get(proxyUrl + targetUrl);
-  const data = prayRes.json();
-  console.table(data);
+  fetch(proxyUrl + targetUrl)
+    .then((blob) => blob.json())
+    .then((data) => {
+      console.log(data);
+    });
 
-  console.log(prayRes.data);
+  // const prayRes = await axios.get(proxyUrl + targetUrl);
+  // const data = prayRes.json();
+  // console.table(data);
+
+  // console.log(prayRes.data);
 };
 const SurveyNew = () => <h2>SurveyNew</h2>;
 

@@ -14,7 +14,7 @@ const Dashboard = async () => {
   let proxyUrl = "https://cors-anywhere.herokuapp.com/",
     targetUrl = "https://shobiddak.com/prayers/prayer_today.json";
   const prayRes = await axios.get(proxyUrl + targetUrl);
-  const data = await prayRes.json();
+  const data = prayRes.json();
   console.table(data);
 
   console.log(prayRes.data);
